@@ -1,0 +1,81 @@
+{
+  "name": "music-tool",
+  "productName": "music-Tool",
+  "version": "0.0.1",
+  "description": "An Electron wrapper for music.saahild.com",
+  "main": "main.js",
+  "build": {
+    "appId": "com.saahild.music",
+    "productName": "music-Tool",
+    "linux": {
+      "category": "Development",
+      "desktop": {
+        "Comment": "An Electron wrapper for music",
+        "Name": "music - Electron",
+        "StartupNotify": "true",
+        "Terminal": "false",
+        "Type": "Application",
+        "Categories": "Development;"
+      },
+      "icon": "icon.png",
+      "executableName": "music-Tool",
+      "maintainer": "Neon <neon@saahild.com>",
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ]
+    },
+    "deb": {
+      "compression": "bzip2"
+    },
+    "mac": {
+      "category": "public.app-category.music",
+      "target": [
+        "dmg"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "license": "LICENSE"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "directories": {
+      "output": "release"
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder -p always"
+  },
+    "publish": [
+    {
+      "provider": "github",
+      "owner": "NeonGamerBot-QK",
+      "repo": "https://github.com/NeonGamerBot-QK/music-app"
+    }
+  ],
+  "author": {
+    "name": "Neon",
+    "email": "neon@saahild.com",
+    "url": "https://saahild.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^16.0.7",
+    "electron-builder": "23.0.2"
+  },
+  "dependencies": {
+    "about-window": "^1.15.2",
+    "electron-store": "^8.0.1",
+    "husky": "^8.0.3",
+    "is-online": "^9.0.1"
+  }
+}
